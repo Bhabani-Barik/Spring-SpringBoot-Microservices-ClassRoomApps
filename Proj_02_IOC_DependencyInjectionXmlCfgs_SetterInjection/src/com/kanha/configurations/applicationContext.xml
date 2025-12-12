@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Dependent Spring Bean Configuration -->
+    <bean id="lTime" class="java.time.LocalTime" factory-method="now"></bean>
+    <bean id="lDate" class="java.time.LocalDate" factory-method="now"></bean>
+    
+    
+    <!-- Target Spring Bean Configuration -->
+    <bean id="wmg" class="com.kanha.sbeans.WishMessageGenerator">
+    	<property name="localTime" ref="lTime"></property>
+    	<property name="localDate" ref="lDate"></property>
+    </bean>
+
+</beans>
