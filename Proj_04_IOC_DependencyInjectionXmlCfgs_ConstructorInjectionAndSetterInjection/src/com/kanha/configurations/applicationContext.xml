@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Dependent Spring Bean Configuration -->
+    <bean id="lTime" class="java.time.LocalTime" factory-method="now"></bean>
+    <bean id="lDate" class="java.time.LocalDate" factory-method="now"></bean>
+    
+    
+    <!-- Dependent Spring Bean Custom Configuration -->
+    <bean id="lTime1" class="java.time.LocalTime" factory-method="of"> 
+    	<constructor-arg value="11" />
+    	<constructor-arg value="20" />	<!-- These are factory method of(-,-) arg values -->
+    </bean>
+    
+    <bean id="lDate1" class="java.time.LocalDate" factory-method="of">
+    	<constructor-arg value="2025" />
+    	<constructor-arg value="08" />
+    	<constructor-arg value="30" />  <!-- These are factory method of(-,-) arg values -->
+    </bean>
+    
+    <!-- Target Spring Bean Configuration -->
+    <bean id="wmg" class="com.kanha.sbeans.WishMessageGenerator">
+    	<!-- <property name="localTime" ref="lTime" />
+    	<property name="localDate" ref="lDate" />  -->	<!-- These value will be injected as the final value -->
+    	
+		<constructor-arg name="localTime" ref="lTime1" />
+		<constructor-arg name="localDate" ref="lDate1" />
+    </bean>
+
+</beans>
