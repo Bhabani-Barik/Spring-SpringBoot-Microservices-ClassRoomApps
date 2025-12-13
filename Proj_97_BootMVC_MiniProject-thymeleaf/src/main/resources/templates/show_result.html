@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<h1  style="color:red;text-align:center"> Actors Report Page </h1>
+  <div th:if="${!listVO.empty}">
+     <table  border="1" bgcolor="yellow"  align="center">
+       <tr>
+          <th> aid </th>
+          <th> aname </th>
+          <th> address </th>
+          <th> category </th>
+          <th> remuneration </th>
+          <th> operations </th>
+       </tr>
+       
+           <tr  th:each=" vo:${listVO}" >
+              <td><span th:text="${vo.aid}"/> </td>
+              <td><span th:text="${vo.aname}"/> </td>
+              <td><span th:text="${vo.addrs}"/> </td>
+              <td><span th:text="${vo.category}"/> </td>
+              <td><span th:text="${vo.remuneration}"/> </td>
+              <td> <a th:href="@{/actor/edit(no=${vo.aid})}"><img th:src="@{/images/edit.jpeg}" width="30px" height="30px"></a> 
+                         &nbsp;&nbsp;&nbsp;
+                       <a th:href="@{/actor/delete(no=${vo.aid})}" onclick="return confirm('Do u Really want to delete the record?')"><img th:src="@{/images/delete.jpeg}" width="30px" height="30px"></a> 
+               </td>
+           </tr> 
+     </table> 
+   <div  th:if="${listVO.empty}">
+        <h1  style="color:red;text-align:center"> Records  not found </h1>
+   </div>
+ <br><br>
+             <h1  style="color:green;text-align:center" th:text="${resultMsg}">    </h1>
+<br><br>
+     <h1  style="color:red;text-align:center"><a th:href="@{/actor/add}">Add Actor <img th:src="@{/images/add.jpeg}" width="80px" height="80px"></a>  </h1>
+ <br><br>     
+<h1  style="color:red;text-align:center"><a th:href="@{/actor/}">  Home<img th:src="@{/images/home.jpeg}" width="80px" height="80px"></a>  </h1>
+ 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<h1   style="color:red;text-align:center"> Actor Registration Form Page </h1>
+
+<form  th:action="@{/actor/add}"   method="POST"  th:object="${actor}">
+  <table bgcolor="cyan" align="center">
+     <tr>
+        <td>  Actor  Name </td>
+        <td>  <input type="text" th:field="*{aname}"/> </td>
+     </tr>
+     <tr>
+        <td>  Actor  Address </td>
+        <td>  <input type="text" th:field="*{addrs}"/> </td>
+     </tr>
+     <tr>
+        <td>  Actor  Catetory </td>
+        <td>  <input type="text" th:field="*{category}"/> </td>
+     </tr>
+     <tr>
+        <td>  Actor  Remuneration </td>
+        <td>  <input type="text" th:field="*{remuneration}"/> </td>
+     </tr>
+     <tr>
+       <td> <input type="submit"  value="register"> </td>
+       <td>  <input type="reset"  value="cancel">  </td>
+     </tr>
+   </table>
+
+</frm:form>
+
