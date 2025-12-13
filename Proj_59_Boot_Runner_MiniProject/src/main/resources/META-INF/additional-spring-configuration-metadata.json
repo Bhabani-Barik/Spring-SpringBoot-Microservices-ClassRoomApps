@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "choose.dao",
+  "type": "java.lang.String",
+  "description": "allows  to  change the DAO spring bean id'"
+}]}
