@@ -1,0 +1,35 @@
+#Employees information
+org:
+ nit:
+  #For Simple properties
+  eno: 101
+  ename: kanha
+  # For array type
+  favColors: 
+   - red
+   - blue
+   - yellow
+  #For List Collection type
+  # indexed approach
+  nickNames: 
+   - kanha
+   - Muna
+   - Mama
+  # Inline approach  --> 1st priority
+  nicknames: [papu, tapu, dipu]
+  #For Set Collection
+  phoneNumbers: 
+   - 99887766554
+   - 12345678909
+   - 56789012345
+  # For map 
+  idDetails: 
+   aadhar: 897812345678
+   voter: 34AA5687
+   panNo: GGASB3422K
+  # For HAS-A property
+  company: 
+   id: 78904
+   name: Google
+   address: Hyderabad
+   size: 50000
