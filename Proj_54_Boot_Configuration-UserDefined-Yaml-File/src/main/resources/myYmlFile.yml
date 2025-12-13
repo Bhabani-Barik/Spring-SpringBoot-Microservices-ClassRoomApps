@@ -1,0 +1,8 @@
+#Custom yml file
+org:
+ nit:
+  customer:
+   customerNo: 1001
+   customerName: Armaan
+   customerAddress: Balasore
+   billAmount: 90000
