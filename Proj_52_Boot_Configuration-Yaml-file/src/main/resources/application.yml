@@ -1,0 +1,7 @@
+#Customer information
+customer:
+  info:
+    customerNo: 101
+    customerName: Kanha
+    customerAddress: Hyderabad
+    billAmount: 1000.45
